@@ -10,7 +10,7 @@ project
 │   preprocessing.py
 │
 └───data
-    │   train_labeld.csv
+    │     train_labeld.csv
     │	  traindata_1.tar.gz
     │	  traindata_2.tar.gz
     │	  traindata_3.tar.gz
