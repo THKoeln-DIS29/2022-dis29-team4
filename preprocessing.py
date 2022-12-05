@@ -20,7 +20,7 @@ features = features.reindex(columns=['actor_account_id','churn_yn','survival_tim
 'event_num','enterworld_num','levelup_num','joinparty_num','spendmoney_num','duel_num',
 'duel_kd','partybattle_num','completechallengetoday_num','completechallengeweek_num',
 'itemupgrade_successrate','trade_num','buyitemnowmainauction_num','guildlevelup_num','level_min',
-'level_max','class','longest_time_between_events','faction1','faction2','targetaccountid_num','sessions_num','has_smurf_yn'])
+'level_max','class','longest_time_between_events','faction1','faction2','targetaccountid_num','sessions_num','masteryexp','duelpoints_max','partybattlepoints_max','duel_rating_score_max','money_max','gathering_num','has_smurf_yn'])
 
 # %%
 for n in range(5):
@@ -28,7 +28,7 @@ for n in range(5):
     for member in tar.getmembers():
         f = tar.extractfile(member).read()
         with gzip.GzipFile(fileobj=BytesIO(f)) as fp:
-            df = pd.read_csv(fp, usecols=['actor_account_id','logid','log_detail_code','entity_code','actor_level','actor_job','time','actor_faction','actor_faction2','target_account_id','session','actor_id'])
+            df = pd.read_csv(fp, usecols=['actor_account_id','logid','log_detail_code','entity_code','actor_level','actor_job','time','actor_faction','actor_faction2','target_account_id','session','actor_id','new_value4_num','old_value2_num','new_value3_num'])
             dict_merge = {}
             dict_merge['actor_account_id'] = str(df.actor_account_id.unique()[0])
             dict_merge['event_num'] = len(df)
@@ -61,6 +61,25 @@ for n in range(5):
             dict_merge['faction2'] = df.actor_faction2.value_counts().index[0]
             dict_merge['targetaccountid_num'] = len(df.target_account_id.unique())
             dict_merge['sessions_num'] = len(df.session.unique())
+            try:
+                dict_merge['masteryexp'] = max(df[df.logid==1016]['new_value4_num'])
+            except ValueError:
+                dict_merge['masteryexp'] = 0
+            try:
+                dict_merge['duelpoints_max'] = max(df[df.logid==1404]['new_value4_num'])
+            except ValueError:
+                dict_merge['duelpoints_max'] = 0
+            try:
+                dict_merge['partybattlepoints_max'] = max(df[df.logid==1424]['new_value4_num'])
+            except ValueError:
+                dict_merge['partybattlepoints_max'] = 0
+            try:    
+                dict_merge['duel_rating_score_max'] = max(df[df.logid==1404]['old_value2_num'])
+            except ValueError:
+                dict_merge['duel_rating_score_max'] = 0 
+            dict_merge['money_max'] = max(df[df.logid==1003]['new_value3_num'])
+            dict_merge['gathering_num'] = len(df[df.logid==2405])
+
             if len(df.actor_id.unique()) > 1:
                 dict_merge['has_smurf_yn'] = 1
             else:
