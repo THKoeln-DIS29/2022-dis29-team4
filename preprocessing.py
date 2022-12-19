@@ -28,20 +28,23 @@ for n in range(5):
     for member in tar.getmembers():
         f = tar.extractfile(member).read()
         with gzip.GzipFile(fileobj=BytesIO(f)) as fp:
-            df = pd.read_csv(fp, usecols=['actor_account_id','logid','log_detail_code','entity_code','actor_level','actor_job','time','actor_faction','actor_faction2','target_account_id','session','actor_id','new_value4_num','old_value2_num','new_value3_num'])
+            df = pd.read_csv(fp, usecols=['actor_account_id','logid','log_detail_code','entity_code','actor_level','actor_job','time','actor_faction','actor_faction2','target_account_id','session','actor_id','new_value4_num','old_value2_num','new_value3_num','use_value2_num'])
             dict_merge = {}
             dict_merge['actor_account_id'] = str(df.actor_account_id.unique()[0])
             dict_merge['event_num'] = len(df)
             dict_merge['enterworld_num'] = len(df[df.logid==1003])
             dict_merge['levelup_num'] = len(df[df.logid==1013])
             dict_merge['joinparty_num'] = len(df[df.logid==1102]) 
-            dict_merge['spendmoney_num'] = len(df[df.logid==1018]) 
+            dict_merge['spendmoney_num'] = len(df[df.logid==1018])
+            dict_merge['average_money_spent_per_session'] = df[df.logid==1018].use_value2_num.sum()/len(df[df.logid==1003])
             dict_merge['duel_num'] = len(df[(df.logid == 1404) | (df.logid == 1406)])
             try:
                 dict_merge['duel_kd'] = (len(df[((df.logid==1404) | (df.logid==1406)) & (df.log_detail_code==1)])) / (len(df[((df.logid==1404) | (df.logid==1406)) & (df.log_detail_code==2)]))
             except ZeroDivisionError:
                 dict_merge['duel_kd'] = 0
+            dict_merge['duels_per_session'] = len(df[(df.logid == 1404) | (df.logid == 1406)])/len(df[df.logid==1003])
             dict_merge['partybattle_num'] = len(df[df.entity_code==80])
+            dict_merge['partybattles_per_session'] = len(df[df.entity_code==80])/len(df[df.logid==1003])
             dict_merge['completechallengetoday_num'] = len(df[df.logid==5011])
             dict_merge['completechallengeweek_num'] = len(df[df.logid==5015])
             try:
@@ -57,22 +60,28 @@ for n in range(5):
             df['time'] = df.apply(lambda row: datetime.strptime(row.time, '%Y-%m-%d %H:%M:%S.%f'), axis=1)
             df['time_diff'] = df.time.diff(-1).dt.total_seconds()
             dict_merge['longest_time_between_events'] = max(-df.time_diff)
+            dict_merge['average_time_between_events'] = df.time_diff.sum()/len(df)
+            dict_merge['average_time_between_logins'] = df[df.logid==1003].time.diff(-1).dt.total_seconds().sum()/len(df[df.logid==1003])
             dict_merge['faction1'] = df.actor_faction.value_counts().index[0]
             dict_merge['faction2'] = df.actor_faction2.value_counts().index[0]
             dict_merge['targetaccountid_num'] = len(df.target_account_id.unique())
             dict_merge['sessions_num'] = len(df.session.unique())
+
             try:
                 dict_merge['masteryexp'] = max(df[df.logid==1016]['new_value4_num'])
             except ValueError:
                 dict_merge['masteryexp'] = 0
+
             try:
                 dict_merge['duelpoints_max'] = max(df[df.logid==1404]['new_value4_num'])
             except ValueError:
                 dict_merge['duelpoints_max'] = 0
+
             try:
                 dict_merge['partybattlepoints_max'] = max(df[df.logid==1424]['new_value4_num'])
             except ValueError:
                 dict_merge['partybattlepoints_max'] = 0
+
             try:    
                 dict_merge['duel_rating_score_max'] = max(df[df.logid==1404]['old_value2_num'])
             except ValueError:
@@ -85,6 +94,16 @@ for n in range(5):
             else:
                 dict_merge['has_smurf_yn'] = 0
 
+            try:
+                dict_merge['reason_getmoney'] = df[df.logid==1017].log_detail_code.value_counts().idxmax()
+            except ValueError:
+                dict_merge['reason_getmoney'] = 0
+            try:
+                dict_merge['reason_spendmoney'] = df[df.logid==1018].log_detail_code.value_counts().idxmax()
+            except ValueError:
+                dict_merge['reason_spendmoney'] = 0
+
+
             for key in dict_merge:
                 dict_merge[key] = [dict_merge[key]]
             df_merge = pd.DataFrame.from_dict(dict_merge)
@@ -94,6 +113,10 @@ for n in range(5):
             # this saves us the trouble of having to handle duplicate columns after every merge
             features = pd.concat((features,df_merge)).groupby('actor_account_id').first().reset_index()
 
+
+# %%
+features.average_time_between_events = -features.average_time_between_events
+features.average_time_between_logins = -features.average_time_between_logins
 
 # %%
 features.to_csv('features.csv', sep=',', float_format='{:.2f}'.format)
