@@ -3,3 +3,6 @@ docs
 ignored
 .ipynb_checkpoints
 *.zip
+preprocessing.ipynb
+testing.ipynb
+main.ipynb
