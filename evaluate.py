@@ -65,7 +65,7 @@ std_score = cross_val_score(loaded_model, X, y, scoring="f1", cv = 10).std()
 print('Mean F1:', mean_score)
 print('Std F1 score', std_score)
 #Cross validation
-scores = cross_val_score(loaded_model, X, y, cv=5)
+scores = cross_val_score(loaded_model, X, y, scoring="f1", cv=5)
 print("CrossValidation Scores: ")
 print(scores)
 print("%0.2f accuracy with a standard deviation of %0.2f" % (scores.mean(), scores.std()))
