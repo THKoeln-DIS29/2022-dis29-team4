@@ -6,3 +6,4 @@ ignored
 preprocessing.ipynb
 testing.ipynb
 main.ipynb
+*.tar.gz
