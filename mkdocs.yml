@@ -1,5 +1,5 @@
 site_name: Team_4
-site_url: https://team_4.dis/
+site_url: https://thkoeln-dis29.github.io/2022-dis29-team4/
 
 plugins:
   - mkdocstrings
