@@ -8,9 +8,12 @@ from tkinter import ttk, filedialog
 from tkinter.filedialog import askopenfile
 import os
 
+
+
+
 def corel():
     print("starting correlations script...")
-
+    """ TEST """
     print("Pick data:")
     file = filedialog.askopenfile(mode='r', filetypes=[('CSV', '*.csv')])
     if file:

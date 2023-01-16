@@ -17,7 +17,6 @@ from tkinter.filedialog import askopenfile
 import os
 
 def pre_pro():
-
     print("starting preprocessing script...")
 
 

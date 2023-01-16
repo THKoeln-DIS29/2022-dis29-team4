@@ -1,0 +1,1866 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="None">
+        
+        <link rel="canonical" href="https://team_4.dis/">
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>Team_4</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+        <link href="assets/_mkdocstrings.css" rel="stylesheet">
+
+        <script src="js/jquery-1.10.2.min.js" defer></script>
+        <script src="js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body class="homepage">
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href=".">Team_4</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem active">
+                                <a href="." class="nav-link">Documentation</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="requirements/" class="nav-link">Requirements</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="about/" class="nav-link">About</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a rel="prev" class="nav-link disabled">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="requirements/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#documentation" class="nav-link">Documentation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#commands" class="nav-link">Commands</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#preprocess-the-trainingdata" class="nav-link">Preprocess the Trainingdata</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#correlations-map" class="nav-link">Correlations Map</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#make-a-gridsearch" class="nav-link">Make a Gridsearch</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#preprocess-the-testdata" class="nav-link">Preprocess the Testdata</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#train-the-votingclassifier" class="nav-link">Train the Votingclassifier</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#apply-the-model" class="nav-link">Apply the model</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="documentation">Documentation</h1>
+<h4 id="welcome-to-team-4s-cli-documentation">Welcome to Team 4's CLI Documentation</h4>
+<p>To use the CLI, you need to launch the following command:</p>
+<pre><code>python main.py 
+</code></pre>
+<p>To get an overview of the commands and functions available,
+you can run:</p>
+<pre><code>python main.py --help
+</code></pre>
+<p>To use one of the availible commands f.e. use:</p>
+<pre><code>python main.py correlations
+</code></pre>
+<hr />
+<h1 id="commands">Commands</h1>
+<p><span style="font-size:1em;">
+An overview of all functionalities is provided in the following section.
+</span></p>
+<hr />
+<h2 id="preprocess-the-trainingdata">Preprocess the Trainingdata</h2>
+<pre><code>python main.py pre_processing
+</code></pre>
+
+
+<div class="doc doc-object doc-function">
+
+
+<a id="main.pre_processing"></a>
+  <div class="doc doc-contents first">
+  
+      <p>This command will start the preprocessing training data. </p>
+<p>The files must be named traindata_(number).tar.gz . F.e. traindata_1.tar.gz. </p>
+<p>It looks for 5 files, doesn't take less or more than that. </p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>1</code></td>
+          <td>
+                <code>GUI</code>
+          </td>
+          <td><p>You'll be asked by a GUI to choose the folder from where the zipped files can be accessed.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>features</code></td>          <td>
+                <code>CSV</code>
+          </td>
+          <td><p>It will save the converted files as features.csv in output/</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>Program/main.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">pre_processing</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;This command will start the preprocessing training data. \n</span>
+<span class="sd">    The files must be named traindata_(number).tar.gz . F.e. traindata_1.tar.gz. \n</span>
+<span class="sd">    It looks for 5 files, doesn&#39;t take less or more than that. \n</span>
+
+
+<span class="sd">    Args:</span>
+<span class="sd">        1 (GUI): You&#39;ll be asked by a GUI to choose the folder from where the zipped files can be accessed.</span>
+
+
+<span class="sd">    Returns:</span>
+<span class="sd">        features (CSV): It will save the converted files as features.csv in output/</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+
+    <span class="n">preprocessing</span><span class="o">.</span><span class="n">pre_pro</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div><p>For the sourcecode of the pre-processing of the training data look here:
+</p>
+
+
+<div class="doc doc-object doc-function">
+
+
+<a id="preprocessing.pre_pro"></a>
+  <div class="doc doc-contents first">
+
+      <details class="quote">
+        <summary>Source code in <code>Program/preprocessing.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">pre_pro</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;starting preprocessing script...&quot;</span><span class="p">)</span>
+
+
+    <span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_columns&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">float_format</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{:,.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span>
+
+    <span class="c1"># %%</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pick labeled Playerset:&quot;</span><span class="p">)</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="n">filedialog</span><span class="o">.</span><span class="n">askopenfile</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">filetypes</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;CSV&#39;</span><span class="p">,</span> <span class="s1">&#39;*.csv&#39;</span><span class="p">)])</span>
+    <span class="k">if</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">filepath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The File is located at : &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">filepath</span><span class="p">))</span>
+    <span class="n">features</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+
+    <span class="c1"># %%</span>
+    <span class="n">features</span> <span class="o">=</span> <span class="n">features</span><span class="o">.</span><span class="n">astype</span><span class="p">({</span><span class="s1">&#39;actor_account_id&#39;</span><span class="p">:</span><span class="s1">&#39;str&#39;</span><span class="p">})</span>
+    <span class="n">features</span> <span class="o">=</span> <span class="n">features</span><span class="o">.</span><span class="n">reindex</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;actor_account_id&#39;</span><span class="p">,</span><span class="s1">&#39;churn_yn&#39;</span><span class="p">,</span><span class="s1">&#39;survival_time&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;event_num&#39;</span><span class="p">,</span><span class="s1">&#39;enterworld_num&#39;</span><span class="p">,</span><span class="s1">&#39;levelup_num&#39;</span><span class="p">,</span><span class="s1">&#39;joinparty_num&#39;</span><span class="p">,</span><span class="s1">&#39;spendmoney_num&#39;</span><span class="p">,</span><span class="s1">&#39;duel_num&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;duel_kd&#39;</span><span class="p">,</span><span class="s1">&#39;partybattle_num&#39;</span><span class="p">,</span><span class="s1">&#39;completechallengetoday_num&#39;</span><span class="p">,</span><span class="s1">&#39;completechallengeweek_num&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;itemupgrade_successrate&#39;</span><span class="p">,</span><span class="s1">&#39;trade_num&#39;</span><span class="p">,</span><span class="s1">&#39;buyitemnowmainauction_num&#39;</span><span class="p">,</span><span class="s1">&#39;guildlevelup_num&#39;</span><span class="p">,</span><span class="s1">&#39;level_min&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;level_max&#39;</span><span class="p">,</span><span class="s1">&#39;class&#39;</span><span class="p">,</span><span class="s1">&#39;longest_time_between_events&#39;</span><span class="p">,</span><span class="s1">&#39;faction1&#39;</span><span class="p">,</span><span class="s1">&#39;faction2&#39;</span><span class="p">,</span><span class="s1">&#39;targetaccountid_num&#39;</span><span class="p">,</span><span class="s1">&#39;sessions_num&#39;</span><span class="p">,</span><span class="s1">&#39;masteryexp&#39;</span><span class="p">,</span><span class="s1">&#39;duelpoints_max&#39;</span><span class="p">,</span><span class="s1">&#39;partybattlepoints_max&#39;</span><span class="p">,</span><span class="s1">&#39;duel_rating_score_max&#39;</span><span class="p">,</span><span class="s1">&#39;money_max&#39;</span><span class="p">,</span><span class="s1">&#39;gathering_num&#39;</span><span class="p">,</span><span class="s1">&#39;has_smurf_yn&#39;</span><span class="p">])</span>
+
+    <span class="c1"># %%</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pick data:&quot;</span><span class="p">)</span>
+    <span class="n">directory</span> <span class="o">=</span> <span class="n">filedialog</span><span class="o">.</span><span class="n">askdirectory</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The Files are located at : &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">directory</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)):</span>
+        <span class="n">tar</span> <span class="o">=</span> <span class="n">tarfile</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">directory</span><span class="o">+</span><span class="s2">&quot;/traindata_&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;.tar.gz&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">member</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">tar</span><span class="o">.</span><span class="n">getmembers</span><span class="p">()):</span>
+            <span class="n">f</span> <span class="o">=</span> <span class="n">tar</span><span class="o">.</span><span class="n">extractfile</span><span class="p">(</span><span class="n">member</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+            <span class="k">with</span> <span class="n">gzip</span><span class="o">.</span><span class="n">GzipFile</span><span class="p">(</span><span class="n">fileobj</span><span class="o">=</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">f</span><span class="p">))</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+                <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">fp</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;actor_account_id&#39;</span><span class="p">,</span><span class="s1">&#39;logid&#39;</span><span class="p">,</span><span class="s1">&#39;log_detail_code&#39;</span><span class="p">,</span><span class="s1">&#39;entity_code&#39;</span><span class="p">,</span><span class="s1">&#39;actor_level&#39;</span><span class="p">,</span><span class="s1">&#39;actor_job&#39;</span><span class="p">,</span><span class="s1">&#39;time&#39;</span><span class="p">,</span><span class="s1">&#39;actor_faction&#39;</span><span class="p">,</span><span class="s1">&#39;actor_faction2&#39;</span><span class="p">,</span><span class="s1">&#39;target_account_id&#39;</span><span class="p">,</span><span class="s1">&#39;session&#39;</span><span class="p">,</span><span class="s1">&#39;actor_id&#39;</span><span class="p">,</span><span class="s1">&#39;new_value4_num&#39;</span><span class="p">,</span><span class="s1">&#39;old_value2_num&#39;</span><span class="p">,</span><span class="s1">&#39;new_value3_num&#39;</span><span class="p">,</span><span class="s1">&#39;use_value2_num&#39;</span><span class="p">])</span>
+                <span class="n">dict_merge</span> <span class="o">=</span> <span class="p">{}</span>
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;actor_account_id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">actor_account_id</span><span class="o">.</span><span class="n">unique</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;event_num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;enterworld_num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">1003</span><span class="p">])</span>
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;levelup_num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">1013</span><span class="p">])</span>
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;joinparty_num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">1102</span><span class="p">])</span> 
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;spendmoney_num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">1018</span><span class="p">])</span>
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;average_money_spent_per_session&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">1018</span><span class="p">]</span><span class="o">.</span><span class="n">use_value2_num</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">1003</span><span class="p">])</span>
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;duel_num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span> <span class="o">==</span> <span class="mi">1404</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span> <span class="o">==</span> <span class="mi">1406</span><span class="p">)])</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;duel_kd&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[((</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">1404</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">1406</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">log_detail_code</span><span class="o">==</span><span class="mi">1</span><span class="p">)]))</span> <span class="o">/</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[((</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">1404</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">1406</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">log_detail_code</span><span class="o">==</span><span class="mi">2</span><span class="p">)]))</span>
+                <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;duel_kd&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;duels_per_session&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span> <span class="o">==</span> <span class="mi">1404</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span> <span class="o">==</span> <span class="mi">1406</span><span class="p">)])</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">1003</span><span class="p">])</span>
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;partybattle_num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">entity_code</span><span class="o">==</span><span class="mi">80</span><span class="p">])</span>
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;partybattles_per_session&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">entity_code</span><span class="o">==</span><span class="mi">80</span><span class="p">])</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">1003</span><span class="p">])</span>
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;completechallengetoday_num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">5011</span><span class="p">])</span>
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;completechallengeweek_num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">5015</span><span class="p">])</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;itemupgrade_successrate&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[((</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">2126</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">2127</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">log_detail_code</span><span class="o">==</span><span class="mi">1</span><span class="p">)]))</span> <span class="o">/</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[((</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">2126</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">2127</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">log_detail_code</span><span class="o">==</span><span class="mi">2</span><span class="p">)]))</span>
+                <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;itemupgrade_successrate&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;trade_num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">2201</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">2202</span><span class="p">)])</span>
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;buyitemnowmainauction_num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">2307</span><span class="p">])</span>
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;guildlevelup_num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">6003</span><span class="p">])</span>
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;level_min&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">actor_level</span><span class="p">)</span>
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;level_max&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">actor_level</span><span class="p">)</span>
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">actor_job</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">df</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">time</span><span class="p">,</span> <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M:%S.</span><span class="si">%f</span><span class="s1">&#39;</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+                <span class="n">df</span><span class="p">[</span><span class="s1">&#39;time_diff&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span>
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;longest_time_between_events&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="o">-</span><span class="n">df</span><span class="o">.</span><span class="n">time_diff</span><span class="p">)</span>
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;average_time_between_events&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">time_diff</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;average_time_between_logins&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">1003</span><span class="p">]</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">1003</span><span class="p">])</span>
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;faction1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">actor_faction</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;faction2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">actor_faction2</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;targetaccountid_num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">target_account_id</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;sessions_num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;masteryexp&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">1016</span><span class="p">][</span><span class="s1">&#39;new_value4_num&#39;</span><span class="p">])</span>
+                <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;masteryexp&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;duelpoints_max&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">1404</span><span class="p">][</span><span class="s1">&#39;new_value4_num&#39;</span><span class="p">])</span>
+                <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;duelpoints_max&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;partybattlepoints_max&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">1424</span><span class="p">][</span><span class="s1">&#39;new_value4_num&#39;</span><span class="p">])</span>
+                <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;partybattlepoints_max&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+                <span class="k">try</span><span class="p">:</span>    
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;duel_rating_score_max&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">1404</span><span class="p">][</span><span class="s1">&#39;old_value2_num&#39;</span><span class="p">])</span>
+                <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;duel_rating_score_max&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> 
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;money_max&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">1003</span><span class="p">][</span><span class="s1">&#39;new_value3_num&#39;</span><span class="p">])</span>
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;gathering_num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">2405</span><span class="p">])</span>
+
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">actor_id</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;has_smurf_yn&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;has_smurf_yn&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;reason_getmoney&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">1017</span><span class="p">]</span><span class="o">.</span><span class="n">log_detail_code</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+                <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;reason_getmoney&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;reason_spendmoney&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">1018</span><span class="p">]</span><span class="o">.</span><span class="n">log_detail_code</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+                <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;reason_spendmoney&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+
+                <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">dict_merge</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">dict_merge</span><span class="p">[</span><span class="n">key</span><span class="p">]]</span>
+                <span class="n">df_merge</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">dict_merge</span><span class="p">)</span>
+
+                <span class="c1"># after concatenating new row containing aggregated data to the features DataFrame, it contains two rows with the same actor_account_id</span>
+                <span class="c1"># we use groupby().first() to only keep the new row with the aggregated data</span>
+                <span class="c1"># this saves us the trouble of having to handle duplicate columns after every merge</span>
+                <span class="n">features</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">features</span><span class="p">,</span><span class="n">df_merge</span><span class="p">))</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;actor_account_id&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+
+    <span class="c1"># %%</span>
+    <span class="n">features</span><span class="o">.</span><span class="n">average_time_between_events</span> <span class="o">=</span> <span class="o">-</span><span class="n">features</span><span class="o">.</span><span class="n">average_time_between_events</span>
+    <span class="n">features</span><span class="o">.</span><span class="n">average_time_between_logins</span> <span class="o">=</span> <span class="o">-</span><span class="n">features</span><span class="o">.</span><span class="n">average_time_between_logins</span>
+
+    <span class="c1"># %%</span>
+    <span class="n">features</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;output/features.csv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">float_format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">{:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;saved data to: output/features.csv&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div><hr />
+<h2 id="correlations-map">Correlations Map</h2>
+<pre><code>python main.py correlations
+</code></pre>
+
+
+<div class="doc doc-object doc-function">
+
+
+<a id="main.correlations"></a>
+  <div class="doc doc-contents first">
+  
+      <p>This command will print you a nice heatmap from which you can read the
+correlations between the datas features.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>1</code></td>
+          <td>
+                <code>GUI</code>
+          </td>
+          <td><p>You'll be asked by a GUI to choose the corresponding CSV from which the graph will be build. </p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>correlation_map</code></td>          <td>
+                <code>PNG</code>
+          </td>
+          <td><p>Returns an heatmap, saved in output/correlation_map.png</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>Program/main.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">correlations</span><span class="p">():</span>
+
+    <span class="sd">&quot;&quot;&quot;This command will print you a nice heatmap from which you can read the</span>
+<span class="sd">    correlations between the datas features.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        1 (GUI): You&#39;ll be asked by a GUI to choose the corresponding CSV from which the graph will be build. </span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        correlation_map (PNG): Returns an heatmap, saved in output/correlation_map.png</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">correlation</span><span class="o">.</span><span class="n">corel</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div><p><span style="font-size:1em;">
+How the heatmap might look like:<br>
+</span>
+<img src="img/heatmap_ex.png" width="400">
+<br></p>
+<p>For the sourcecode of the heatmap look here:
+</p>
+
+
+<div class="doc doc-object doc-function">
+
+
+<a id="correlation.corel"></a>
+  <div class="doc doc-contents first">
+
+      <details class="quote">
+        <summary>Source code in <code>Program/correlation.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">corel</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;starting correlations script...&quot;</span><span class="p">)</span>
+    <span class="sd">&quot;&quot;&quot; TEST &quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pick data:&quot;</span><span class="p">)</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="n">filedialog</span><span class="o">.</span><span class="n">askopenfile</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">filetypes</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;CSV&#39;</span><span class="p">,</span> <span class="s1">&#39;*.csv&#39;</span><span class="p">)])</span>
+    <span class="k">if</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">filepath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The File is located at : &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">filepath</span><span class="p">))</span>
+
+    <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+    <span class="c1">#usecols=[&#39;churn_yn&#39;,&#39;longest_time_between_events&#39;, &#39;event_num&#39;, &#39;enterworld_num&#39;, &#39;levelup_num&#39;, &#39;spendmoney_num&#39;, &#39;itemupgrade_successrate&#39;, &#39;sessions_num&#39;])</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;actor_account_id&#39;</span><span class="p">,</span><span class="s1">&#39;survival_time&#39;</span><span class="p">,</span><span class="s1">&#39;churn_yn&#39;</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">corr</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">triu</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">corr</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">))</span>
+    <span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">14</span><span class="p">))</span>
+    <span class="n">cmap</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">diverging_palette</span><span class="p">(</span><span class="mi">230</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">as_cmap</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">heat_map</span><span class="o">=</span><span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">corr</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                <span class="n">square</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="mf">.5</span><span class="p">,</span> <span class="n">cbar_kws</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;shrink&quot;</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">})</span>
+    <span class="n">heat_map</span><span class="o">=</span><span class="n">heat_map</span><span class="o">.</span><span class="n">get_figure</span><span class="p">()</span>
+    <span class="n">heat_map</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;output/correlation_map.png&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The Corelation map is saved to output/correlation_map.png&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div><hr />
+<h2 id="make-a-gridsearch">Make a Gridsearch</h2>
+<pre><code>python main.py grid_search
+</code></pre>
+
+
+<div class="doc doc-object doc-function">
+
+
+<a id="main.grid_search"></a>
+  <div class="doc doc-contents first">
+  
+      <p>This command will print the best parameters for the Deciscion Tree and Random forest models. </p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>1</code></td>
+          <td>
+                <code>GUI</code>
+          </td>
+          <td><p>You'll be asked by a GUI to choose the corresponding CSV from which the models will get fitted.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>Program/main.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">grid_search</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot; This command will print the best parameters for the Deciscion Tree and Random forest models. \n</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        1 (GUI): You&#39;ll be asked by a GUI to choose the corresponding CSV from which the models will get fitted.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">gridsearch</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div><p>For the sourcecode of the grid search look here:
+</p>
+
+
+<div class="doc doc-object doc-function">
+
+
+<a id="gridsearch.grid"></a>
+  <div class="doc doc-contents first">
+
+      <details class="quote">
+        <summary>Source code in <code>Program/gridsearch.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span>
+<span class="normal">89</span>
+<span class="normal">90</span>
+<span class="normal">91</span>
+<span class="normal">92</span>
+<span class="normal">93</span>
+<span class="normal">94</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">grid</span><span class="p">():</span>
+
+    <span class="n">s_scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;starting gridsearch script...&quot;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pick data:&quot;</span><span class="p">)</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="n">filedialog</span><span class="o">.</span><span class="n">askopenfile</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">filetypes</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;CSV&#39;</span><span class="p">,</span> <span class="s1">&#39;*.csv&#39;</span><span class="p">)])</span>
+    <span class="k">if</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">filepath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The File is located at : &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">filepath</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;loading features&quot;</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+    <span class="c1"># Delete unesessary features from dataset</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;enterworld_num&#39;</span><span class="p">,</span><span class="s1">&#39;buyitemnowmainauction_num&#39;</span><span class="p">,</span><span class="s1">&#39;completechallengeweek_num&#39;</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;actor_account_id&#39;</span>
+                        <span class="p">,</span><span class="s1">&#39;survival_time&#39;</span>
+                        <span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="c1"># Setup &amp; split dataset for training</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;churn_yn&#39;</span><span class="p">)</span>
+    <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
+    <span class="c1"># Normalize data</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;normalizing dataset&quot;</span><span class="p">)</span>
+    <span class="n">X_train</span> <span class="o">=</span> <span class="n">s_scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+    <span class="n">X_test</span> <span class="o">=</span> <span class="n">s_scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+    <span class="c1"># Print training data shape</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shape of test and training dataset&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">y_test</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">y_train</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+
+    <span class="n">param_grid</span> <span class="o">=</span> <span class="p">{</span> 
+        <span class="s1">&#39;max_features&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;sqrt&#39;</span><span class="p">,</span><span class="s1">&#39;log2&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;max_depth&#39;</span> <span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">25</span><span class="p">),</span>
+        <span class="s1">&#39;criterion&#39;</span> <span class="p">:[</span><span class="s1">&#39;gini&#39;</span><span class="p">,</span><span class="s1">&#39;entropy&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;min_samples_split&#39;</span> <span class="p">:</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span>
+        <span class="s1">&#39;min_samples_leaf&#39;</span> <span class="p">:</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span>
+        <span class="s1">&#39;min_weight_fraction_leaf&#39;</span> <span class="p">:</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.3</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Decision Tree CV with param grid: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">param_grid</span><span class="p">))</span>
+    <span class="n">tree</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span>
+    <span class="n">CV_rfc</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="n">tree</span><span class="p">,</span><span class="n">param_grid</span><span class="o">=</span><span class="n">param_grid</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="n">CV_rfc</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;best parameters for Decision Tree Classifier are:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">CV_rfc</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;best estimators for Decision Tree Classifier are:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">CV_rfc</span><span class="o">.</span><span class="n">best_estimator_</span><span class="p">)</span>
+
+    <span class="n">param_grid</span> <span class="o">=</span> <span class="p">{</span> 
+        <span class="s1">&#39;n_estimators&#39;</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">900</span><span class="p">,</span> <span class="mi">1200</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span>
+        <span class="s1">&#39;max_features&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;sqrt&#39;</span><span class="p">,</span><span class="s1">&#39;log2&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;max_depth&#39;</span> <span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span>
+        <span class="s1">&#39;criterion&#39;</span> <span class="p">:[</span><span class="s1">&#39;gini&#39;</span><span class="p">,</span><span class="s1">&#39;entropy&#39;</span><span class="p">]</span>
+    <span class="p">}</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Random Forrest CV with param grid: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">param_grid</span><span class="p">))</span>
+    <span class="n">forest</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">CV_rfc</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="n">forest</span><span class="p">,</span><span class="n">param_grid</span><span class="o">=</span><span class="n">param_grid</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="n">CV_rfc</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;best parameters for Random Forrest are:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">CV_rfc</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div><hr />
+<h2 id="preprocess-the-testdata">Preprocess the Testdata</h2>
+<pre><code>python main.py pre_processing_eval
+</code></pre>
+
+
+<div class="doc doc-object doc-function">
+
+
+<a id="main.pre_processing_eval"></a>
+  <div class="doc doc-contents first">
+  
+      <p>This command will start the preprocessing for the test data.</p>
+<p>The files must be named testdata_(number).tar.gz . F.e. testdata_1.tar.gz .</p>
+<p>It looks for 5 files, doesn't take less or more than that.</p>
+<p>It will save the converted files as eval.csv in output/ .</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>1</code></td>
+          <td>
+                <code>GUI</code>
+          </td>
+          <td><p>You'll be asked by a GUI to choose the folder from where the zipped files can be accessed.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>eval</code></td>          <td>
+                <code>CSV</code>
+          </td>
+          <td><p>It will save the converted files as eval.csv in output/</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>Program/main.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span>
+<span class="normal">89</span>
+<span class="normal">90</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">pre_processing_eval</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;This command will start the preprocessing for the test data.\n</span>
+<span class="sd">    The files must be named testdata_(number).tar.gz . F.e. testdata_1.tar.gz .\n</span>
+<span class="sd">    It looks for 5 files, doesn&#39;t take less or more than that.\n</span>
+<span class="sd">    It will save the converted files as eval.csv in output/ .\n</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        1 (GUI): You&#39;ll be asked by a GUI to choose the folder from where the zipped files can be accessed.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        eval (CSV): It will save the converted files as eval.csv in output/</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">preprocessing_eval</span><span class="o">.</span><span class="n">pre_eval</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div><p>For the sourcecode of the pre-processing of the test data look here:
+</p>
+
+
+<div class="doc doc-object doc-function">
+
+
+<a id="preprocessing_eval.pre_eval"></a>
+  <div class="doc doc-contents first">
+
+      <details class="quote">
+        <summary>Source code in <code>Program/preprocessing_eval.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">pre_eval</span><span class="p">():</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;starting preprocessing_eval script...&quot;</span><span class="p">)</span>
+
+    <span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_columns&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">float_format</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{:,.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span>
+
+    <span class="c1"># %%</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pick labeled Playerset:&quot;</span><span class="p">)</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="n">filedialog</span><span class="o">.</span><span class="n">askopenfile</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">filetypes</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;CSV&#39;</span><span class="p">,</span> <span class="s1">&#39;*.csv&#39;</span><span class="p">)])</span>
+    <span class="k">if</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">filepath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The File is located at : &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">filepath</span><span class="p">))</span>
+    <span class="n">features</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+
+    <span class="c1"># %%</span>
+    <span class="n">features</span> <span class="o">=</span> <span class="n">features</span><span class="o">.</span><span class="n">astype</span><span class="p">({</span><span class="s1">&#39;actor_account_id&#39;</span><span class="p">:</span><span class="s1">&#39;str&#39;</span><span class="p">})</span>
+    <span class="n">features</span> <span class="o">=</span> <span class="n">features</span><span class="o">.</span><span class="n">reindex</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;actor_account_id&#39;</span><span class="p">,</span><span class="s1">&#39;churn_yn&#39;</span><span class="p">,</span><span class="s1">&#39;survival_time&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;event_num&#39;</span><span class="p">,</span><span class="s1">&#39;enterworld_num&#39;</span><span class="p">,</span><span class="s1">&#39;levelup_num&#39;</span><span class="p">,</span><span class="s1">&#39;joinparty_num&#39;</span><span class="p">,</span><span class="s1">&#39;spendmoney_num&#39;</span><span class="p">,</span><span class="s1">&#39;duel_num&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;duel_kd&#39;</span><span class="p">,</span><span class="s1">&#39;partybattle_num&#39;</span><span class="p">,</span><span class="s1">&#39;completechallengetoday_num&#39;</span><span class="p">,</span><span class="s1">&#39;completechallengeweek_num&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;itemupgrade_successrate&#39;</span><span class="p">,</span><span class="s1">&#39;trade_num&#39;</span><span class="p">,</span><span class="s1">&#39;buyitemnowmainauction_num&#39;</span><span class="p">,</span><span class="s1">&#39;guildlevelup_num&#39;</span><span class="p">,</span><span class="s1">&#39;level_min&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;level_max&#39;</span><span class="p">,</span><span class="s1">&#39;class&#39;</span><span class="p">,</span><span class="s1">&#39;longest_time_between_events&#39;</span><span class="p">,</span><span class="s1">&#39;faction1&#39;</span><span class="p">,</span><span class="s1">&#39;faction2&#39;</span><span class="p">,</span><span class="s1">&#39;targetaccountid_num&#39;</span><span class="p">,</span><span class="s1">&#39;sessions_num&#39;</span><span class="p">,</span><span class="s1">&#39;masteryexp&#39;</span><span class="p">,</span><span class="s1">&#39;duelpoints_max&#39;</span><span class="p">,</span><span class="s1">&#39;partybattlepoints_max&#39;</span><span class="p">,</span><span class="s1">&#39;duel_rating_score_max&#39;</span><span class="p">,</span><span class="s1">&#39;money_max&#39;</span><span class="p">,</span><span class="s1">&#39;gathering_num&#39;</span><span class="p">,</span><span class="s1">&#39;has_smurf_yn&#39;</span><span class="p">])</span>
+
+    <span class="c1"># %%</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pick data:&quot;</span><span class="p">)</span>
+    <span class="n">directory</span> <span class="o">=</span> <span class="n">filedialog</span><span class="o">.</span><span class="n">askdirectory</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The Files are located at : &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">directory</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)):</span>
+        <span class="n">tar</span> <span class="o">=</span> <span class="n">tarfile</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">directory</span><span class="o">+</span><span class="s1">&#39;/testdata1_&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;.tar.gz&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">member</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">tar</span><span class="o">.</span><span class="n">getmembers</span><span class="p">()):</span>
+            <span class="n">f</span> <span class="o">=</span> <span class="n">tar</span><span class="o">.</span><span class="n">extractfile</span><span class="p">(</span><span class="n">member</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+            <span class="k">with</span> <span class="n">gzip</span><span class="o">.</span><span class="n">GzipFile</span><span class="p">(</span><span class="n">fileobj</span><span class="o">=</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">f</span><span class="p">))</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+                <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">fp</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;actor_account_id&#39;</span><span class="p">,</span><span class="s1">&#39;logid&#39;</span><span class="p">,</span><span class="s1">&#39;log_detail_code&#39;</span><span class="p">,</span><span class="s1">&#39;entity_code&#39;</span><span class="p">,</span><span class="s1">&#39;actor_level&#39;</span><span class="p">,</span><span class="s1">&#39;actor_job&#39;</span><span class="p">,</span><span class="s1">&#39;time&#39;</span><span class="p">,</span><span class="s1">&#39;actor_faction&#39;</span><span class="p">,</span><span class="s1">&#39;actor_faction2&#39;</span><span class="p">,</span><span class="s1">&#39;target_account_id&#39;</span><span class="p">,</span><span class="s1">&#39;session&#39;</span><span class="p">,</span><span class="s1">&#39;actor_id&#39;</span><span class="p">,</span><span class="s1">&#39;new_value4_num&#39;</span><span class="p">,</span><span class="s1">&#39;old_value2_num&#39;</span><span class="p">,</span><span class="s1">&#39;new_value3_num&#39;</span><span class="p">,</span><span class="s1">&#39;use_value2_num&#39;</span><span class="p">],</span><span class="n">low_memory</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+                <span class="n">dict_merge</span> <span class="o">=</span> <span class="p">{}</span>
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;actor_account_id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">actor_account_id</span><span class="o">.</span><span class="n">unique</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;event_num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;enterworld_num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">1003</span><span class="p">])</span>
+                <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;enterworld_num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;levelup_num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">1013</span><span class="p">])</span>
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;joinparty_num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">1102</span><span class="p">])</span> 
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;spendmoney_num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">1018</span><span class="p">])</span>
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;average_money_spent_per_session&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">1018</span><span class="p">]</span><span class="o">.</span><span class="n">use_value2_num</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">1003</span><span class="p">])</span>
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;duel_num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span> <span class="o">==</span> <span class="mi">1404</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span> <span class="o">==</span> <span class="mi">1406</span><span class="p">)])</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;duel_kd&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[((</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">1404</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">1406</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">log_detail_code</span><span class="o">==</span><span class="mi">1</span><span class="p">)]))</span> <span class="o">/</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[((</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">1404</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">1406</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">log_detail_code</span><span class="o">==</span><span class="mi">2</span><span class="p">)]))</span>
+                <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;duel_kd&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;duels_per_session&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span> <span class="o">==</span> <span class="mi">1404</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span> <span class="o">==</span> <span class="mi">1406</span><span class="p">)])</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">1003</span><span class="p">])</span>
+                <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;duels_per_session&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;partybattle_num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">entity_code</span><span class="o">==</span><span class="mi">80</span><span class="p">])</span>
+                <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;partybattle_num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;partybattles_per_session&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">entity_code</span><span class="o">==</span><span class="mi">80</span><span class="p">])</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">1003</span><span class="p">])</span>
+                <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;partybattle_num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;completechallengetoday_num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">5011</span><span class="p">])</span>
+                <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;completechallengetoday_num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;completechallengeweek_num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">5015</span><span class="p">])</span>
+                <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;completechallengeweek_num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;itemupgrade_successrate&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[((</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">2126</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">2127</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">log_detail_code</span><span class="o">==</span><span class="mi">1</span><span class="p">)]))</span> <span class="o">/</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[((</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">2126</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">2127</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">log_detail_code</span><span class="o">==</span><span class="mi">2</span><span class="p">)]))</span>
+                <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;itemupgrade_successrate&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;trade_num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">2201</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">2202</span><span class="p">)])</span>
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;buyitemnowmainauction_num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">2307</span><span class="p">])</span>
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;guildlevelup_num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">6003</span><span class="p">])</span>
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;level_min&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">actor_level</span><span class="p">)</span>
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;level_max&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">actor_level</span><span class="p">)</span>
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">actor_job</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">df</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">time</span><span class="p">,</span> <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M:%S.</span><span class="si">%f</span><span class="s1">&#39;</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+                <span class="n">df</span><span class="p">[</span><span class="s1">&#39;time_diff&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span>
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;longest_time_between_events&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="o">-</span><span class="n">df</span><span class="o">.</span><span class="n">time_diff</span><span class="p">)</span>
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;average_time_between_events&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">time_diff</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;average_time_between_logins&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">1003</span><span class="p">]</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">1003</span><span class="p">])</span>
+                <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;average_time_between_logins&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;faction1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">actor_faction</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;faction2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">actor_faction2</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;targetaccountid_num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">target_account_id</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+                <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;sessions_num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;masteryexp&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">1016</span><span class="p">][</span><span class="s1">&#39;new_value4_num&#39;</span><span class="p">])</span>
+                <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;masteryexp&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;duelpoints_max&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">1404</span><span class="p">][</span><span class="s1">&#39;new_value4_num&#39;</span><span class="p">])</span>
+                <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;duelpoints_max&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;partybattlepoints_max&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">1424</span><span class="p">][</span><span class="s1">&#39;new_value4_num&#39;</span><span class="p">])</span>
+                <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;partybattlepoints_max&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+                <span class="k">try</span><span class="p">:</span>    
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;duel_rating_score_max&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">1404</span><span class="p">][</span><span class="s1">&#39;old_value2_num&#39;</span><span class="p">])</span>
+                <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;duel_rating_score_max&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> 
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;money_max&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">1003</span><span class="p">][</span><span class="s1">&#39;new_value3_num&#39;</span><span class="p">])</span>
+                <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;money_max&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;gathering_num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">2405</span><span class="p">])</span>
+                <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;gathering_num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">actor_id</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;has_smurf_yn&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;has_smurf_yn&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;reason_getmoney&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">1017</span><span class="p">]</span><span class="o">.</span><span class="n">log_detail_code</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+                <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;reason_getmoney&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;reason_spendmoney&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">logid</span><span class="o">==</span><span class="mi">1018</span><span class="p">]</span><span class="o">.</span><span class="n">log_detail_code</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+                <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="s1">&#39;reason_spendmoney&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+
+                <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">dict_merge</span><span class="p">:</span>
+                    <span class="n">dict_merge</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">dict_merge</span><span class="p">[</span><span class="n">key</span><span class="p">]]</span>
+                <span class="n">df_merge</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">dict_merge</span><span class="p">)</span>
+
+                <span class="c1"># after concatenating new row containing aggregated data to the features DataFrame, it contains two rows with the same actor_account_id</span>
+                <span class="c1"># we use groupby().first() to only keep the new row with the aggregated data</span>
+                <span class="c1"># this saves us the trouble of having to handle duplicate columns after every merge</span>
+                <span class="n">features</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">features</span><span class="p">,</span><span class="n">df_merge</span><span class="p">))</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;actor_account_id&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+
+    <span class="c1"># %%</span>
+    <span class="n">features</span><span class="o">.</span><span class="n">average_time_between_events</span> <span class="o">=</span> <span class="o">-</span><span class="n">features</span><span class="o">.</span><span class="n">average_time_between_events</span>
+    <span class="n">features</span><span class="o">.</span><span class="n">average_time_between_logins</span> <span class="o">=</span> <span class="o">-</span><span class="n">features</span><span class="o">.</span><span class="n">average_time_between_logins</span>
+
+    <span class="c1"># %%</span>
+    <span class="n">features</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;output/eval.csv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">float_format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">{:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;saved data to: output/features.csv&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div><hr />
+<h2 id="train-the-votingclassifier">Train the Votingclassifier</h2>
+<pre><code>python main.py votingclassifier
+</code></pre>
+<p><span style="font-size:1em;">
+Votingclassifier setup in Sci-Kit learn:<br>
+</span>
+<img src="img/model.png" width="800">
+<br></p>
+
+
+<div class="doc doc-object doc-function">
+
+
+<a id="main.votingclassifier"></a>
+  <div class="doc doc-contents first">
+  
+      <p>This command will start the training of the voting classifier.</p>
+<p>The classifiers parameters are <strong>HARDCODED</strong> and can only be changed via editing the voting_classifier.py file!</p>
+<p>Once the model is build it will print a F1-score.</p>
+<p>The command will save the trained model to output/voting_clf.sav .</p>
+<p>With the saved model you'll be able to appply the model to a test dataset.</p>
+<hr />
+<table>
+<thead>
+<tr>
+<th>Classifiers</th>
+<th>Weight</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Decision Tree</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Random Forest</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Gaussian Process Classifier</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>Training the model will take some time!</em></p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>1</code></td>
+          <td>
+                <code>GUI</code>
+          </td>
+          <td><p>You'll be asked by a GUI to choose the features.csv file for training the model.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>voting_clf</code></td>          <td>
+                <code>Pickle / sav</code>
+          </td>
+          <td><p>The command will save the trained model to output/voting_clf.sav .</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>Program/main.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">votingclassifier</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;This command will start the training of the voting classifier.\n</span>
+<span class="sd">    The classifiers parameters are **HARDCODED** and can only be changed via editing the voting_classifier.py file!\n</span>
+<span class="sd">    Once the model is build it will print a F1-score.\n</span>
+<span class="sd">    The command will save the trained model to output/voting_clf.sav .\n</span>
+<span class="sd">    With the saved model you&#39;ll be able to appply the model to a test dataset.\n</span>
+<span class="sd">    ----------------------------------------------------------------</span>
+<span class="sd">    | Classifiers | Weight |</span>
+<span class="sd">    |---|---|</span>
+<span class="sd">    | Decision Tree |  1 |</span>
+<span class="sd">    | Random Forest |  1 |</span>
+<span class="sd">    | Gaussian Process Classifier | 1  |</span>
+
+<span class="sd">    ----------------------------------------------------------------</span>
+
+<span class="sd">    *Training the model will take some time!*</span>
+
+
+
+<span class="sd">    Args:</span>
+<span class="sd">        1 (GUI): You&#39;ll be asked by a GUI to choose the features.csv file for training the model.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        voting_clf (Pickle / sav): The command will save the trained model to output/voting_clf.sav .</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">voting_classifier</span><span class="o">.</span><span class="n">classy</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div><p>For the source code of the voting classifier look here:
+</p>
+
+
+<div class="doc doc-object doc-function">
+
+
+<a id="voting_classifier.classy"></a>
+  <div class="doc doc-contents first">
+
+      <details class="quote">
+        <summary>Source code in <code>Program/voting_classifier.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">classy</span><span class="p">():</span>
+
+    <span class="n">s_scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;starting voting classifier script...&quot;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pick data:&quot;</span><span class="p">)</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="n">filedialog</span><span class="o">.</span><span class="n">askopenfile</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">filetypes</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;CSV&#39;</span><span class="p">,</span> <span class="s1">&#39;*.csv&#39;</span><span class="p">)])</span>
+    <span class="k">if</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">filepath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The File is located at : &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">filepath</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;loading features&quot;</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+    <span class="c1"># Delete unesessary features from dataset</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;enterworld_num&#39;</span><span class="p">,</span><span class="s1">&#39;buyitemnowmainauction_num&#39;</span><span class="p">,</span><span class="s1">&#39;completechallengeweek_num&#39;</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;actor_account_id&#39;</span>
+                        <span class="p">,</span><span class="s1">&#39;survival_time&#39;</span>
+                        <span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="c1"># Setup &amp; split dataset for training</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;building training &amp; test dataset&quot;</span><span class="p">)</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;churn_yn&#39;</span><span class="p">)</span>
+    <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
+    <span class="c1"># Print training data shape</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shape of test and training dataset&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">y_test</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">y_train</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;normalizing dataset&quot;</span><span class="p">)</span>
+    <span class="n">X_train</span> <span class="o">=</span> <span class="n">s_scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+    <span class="n">X_test</span> <span class="o">=</span> <span class="n">s_scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Building voting classifier&quot;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;seting up decision tree&quot;</span><span class="p">)</span>
+    <span class="n">clf</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">criterion</span><span class="o">=</span><span class="s1">&#39;entropy&#39;</span><span class="p">,</span> 
+        <span class="n">splitter</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">,</span> 
+        <span class="n">max_depth</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> 
+        <span class="n">min_samples_split</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> 
+        <span class="n">min_samples_leaf</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> 
+        <span class="n">min_weight_fraction_leaf</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> 
+        <span class="n">max_features</span><span class="o">=</span><span class="s1">&#39;sqrt&#39;</span><span class="p">,</span> 
+        <span class="n">random_state</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+        <span class="n">max_leaf_nodes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+        <span class="n">min_impurity_decrease</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> 
+        <span class="n">ccp_alpha</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;seting up random forrest&quot;</span><span class="p">)</span>
+    <span class="n">forest</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                                <span class="n">criterion</span><span class="o">=</span><span class="s1">&#39;entropy&#39;</span><span class="p">,</span>
+                                <span class="n">max_depth</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span>
+                                <span class="n">max_features</span><span class="o">=</span><span class="s1">&#39;sqrt&#39;</span><span class="p">,</span>
+                                <span class="n">n_estimators</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;seting up gaussian process classifier&quot;</span><span class="p">)</span>
+    <span class="n">gapc</span><span class="o">=</span><span class="n">GaussianProcessClassifier</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">*</span> <span class="n">RBF</span><span class="p">(</span><span class="mf">1.0</span><span class="p">),</span> 
+                                    <span class="n">multi_class</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;one_vs_one&#39;</span><span class="p">),</span>
+                                    <span class="n">max_iter_predict</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+                                    <span class="n">n_restarts_optimizer</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+                                    <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;combining classifiers&quot;</span><span class="p">)</span>
+    <span class="n">eclf</span> <span class="o">=</span> <span class="n">VotingClassifier</span><span class="p">(</span><span class="n">estimators</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;RF&#39;</span><span class="p">,</span> <span class="n">forest</span><span class="p">),</span>
+                                        <span class="p">(</span><span class="s1">&#39;Gaussian Process&#39;</span><span class="p">,</span> <span class="n">gapc</span><span class="p">),</span>
+                                        <span class="p">(</span><span class="s1">&#39;DCTree&#39;</span><span class="p">,</span> <span class="n">clf</span><span class="p">)],</span>
+                                        <span class="n">voting</span><span class="o">=</span><span class="s1">&#39;soft&#39;</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;training voting classifier&quot;</span><span class="p">)</span>
+    <span class="n">eclf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+    <span class="c1">#F1-score</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;F1 Score&quot;</span><span class="p">)</span>
+    <span class="n">vote</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">eclf</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s2">&quot;f1&quot;</span><span class="p">,</span> <span class="n">cv</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span><span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CrossValidation Scores: &quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">vote</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%0.2f</span><span class="s2"> accuracy with a standard deviation of </span><span class="si">%0.2f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">vote</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">vote</span><span class="o">.</span><span class="n">std</span><span class="p">()))</span>
+
+    <span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;output/voting_clf.sav&#39;</span>
+    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">eclf</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The model was trained and saved to output/voting_clf.sav&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div><hr />
+<h2 id="apply-the-model">Apply the model</h2>
+<pre><code>python main.py applymodel
+</code></pre>
+
+
+<div class="doc doc-object doc-function">
+
+
+<a id="main.applymodel"></a>
+  <div class="doc doc-contents first">
+  
+      <p>This command applies the previously trained model to your churn_predictions.csv file.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>1</code></td>
+          <td>
+                <code>GUI</code>
+          </td>
+          <td><p>You'll be asked by a GUI to Pick the csv where you want to apply the model to.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>2</code></td>
+          <td>
+                <code>GUI</code>
+          </td>
+          <td><p>You'll be asked by a GUI to pick the model you want to predict with."</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>churn_predictions</code></td>          <td>
+                <code>CSV</code>
+          </td>
+          <td><p>Returns a labeled csv to output/churn_predictions.csv</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>Program/main.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">applymodel</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;This command applies the previously trained model to your churn_predictions.csv file.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        1 (GUI): You&#39;ll be asked by a GUI to Pick the csv where you want to apply the model to.</span>
+<span class="sd">        2 (GUI): You&#39;ll be asked by a GUI to pick the model you want to predict with.&quot;</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        churn_predictions (CSV): Returns a labeled csv to output/churn_predictions.csv</span>
+
+
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Starting to apply the model&quot;</span><span class="p">)</span>
+    <span class="n">apply_model</span><span class="o">.</span><span class="n">model</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div><p>For the source code of the apply model function look here:
+</p>
+
+
+<div class="doc doc-object doc-function">
+
+
+<a id="apply_model.model"></a>
+  <div class="doc doc-contents first">
+
+      <details class="quote">
+        <summary>Source code in <code>Program/apply_model.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">model</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;starting apply model script...&quot;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pick data:&quot;</span><span class="p">)</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="n">filedialog</span><span class="o">.</span><span class="n">askopenfile</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">filetypes</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;CSV&#39;</span><span class="p">,</span> <span class="s1">&#39;*.csv&#39;</span><span class="p">)])</span>
+    <span class="k">if</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">filepath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The File is located at : &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">filepath</span><span class="p">))</span>
+
+    <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;actor_account_id&#39;</span><span class="p">:</span><span class="nb">str</span><span class="p">})</span>
+    <span class="c1"># Delete unesessary features from dataset</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;enterworld_num&#39;</span><span class="p">,</span><span class="s1">&#39;buyitemnowmainauction_num&#39;</span><span class="p">,</span><span class="s1">&#39;completechallengeweek_num&#39;</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="c1"># Setup &amp; split dataset for training</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">account_ids</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;actor_account_id&#39;</span><span class="p">)</span>
+    <span class="n">s_scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">s_scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pick model:&quot;</span><span class="p">)</span>
+    <span class="n">sav</span> <span class="o">=</span> <span class="n">filedialog</span><span class="o">.</span><span class="n">askopenfile</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">filetypes</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;Trained Model&#39;</span><span class="p">,</span> <span class="s1">&#39;*.sav&#39;</span><span class="p">)])</span>
+    <span class="k">if</span> <span class="n">sav</span><span class="p">:</span>
+        <span class="n">sav</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">sav</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The File is located at : &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">sav</span><span class="p">))</span>
+
+    <span class="n">loaded_model</span> <span class="o">=</span> <span class="n">pk</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">sav</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">))</span>
+    <span class="n">predictions</span> <span class="o">=</span> <span class="n">loaded_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">df_predictions</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">account_ids</span><span class="p">,</span><span class="n">predictions</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
+
+    <span class="n">df_predictions</span> <span class="o">=</span> <span class="n">df_predictions</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Unnamed 0&#39;</span><span class="p">:</span><span class="s1">&#39;churn_yn&#39;</span><span class="p">})</span>
+
+    <span class="n">df_predictions</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;output/churn_predictions.csv&#39;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div><hr /></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js" defer></script>
+
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 1.4.2
+Build Date UTC : 2023-01-16 20:11:39.895419+00:00
+-->
