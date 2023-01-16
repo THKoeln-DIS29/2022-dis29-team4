@@ -1,0 +1,11 @@
+site_name: Team_4
+site_url: https://team_4.dis/
+
+plugins:
+  - mkdocstrings
+
+nav:
+    - 'index.md'
+    - 'requirements.md'
+    - 'about.md'
+    
