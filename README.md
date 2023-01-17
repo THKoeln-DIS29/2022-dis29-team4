@@ -31,28 +31,20 @@ python main.py correlations
 <span style="font-size:1em;">
 An overview of all functionalities is provided in the following section.
 </span>
+
+
 ----------------------------------------------------------------
 
 ## Preprocess the Trainingdata
 ```
 python main.py pre_processing
 ```
-### ::: main.pre_processing
-For the sourcecode of the pre-processing of the training data look here:
-##### ::: preprocessing.pre_pro
+
 ----------------------------------------------------------------
 ## Correlations Map
 ```
 python main.py correlations
 ```
-### ::: main.correlations
-<span style="font-size:1em;">
-How the heatmap might look like:<br>
-</span>
-<img src="img/heatmap_ex.png" width="400">
-<br>
-
-
 ----------------------------------------------------------------
 ## Make a Gridsearch
 ```
